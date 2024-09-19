@@ -5,6 +5,7 @@ import { Navbar, Nav, Container } from "react-bootstrap";
 const NavigationBar = () => {
   const [showFullName, setShowFullName] = useState(true);
   const [fadeClass, setFadeClass] = useState("fade-in");
+  const [expanded, setExpanded] = useState(false); // State to handle the navbar toggling
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -18,9 +19,13 @@ const NavigationBar = () => {
     return () => clearInterval(interval); // Clean up the interval on component unmount
   }, []);
 
+  const handleLinkClick = () => {
+    setExpanded(false); // Collapse the navbar after a link is clicked
+  };
+
   return (
     <div className="mb-6">
-      <Navbar bg="light" expand="lg" fixed="top">
+      <Navbar bg="light" expand="lg" fixed="top" expanded={expanded}>
         <Container>
           <Navbar.Brand href="/">
             <div className={`${fadeClass} gradient-text`}>
@@ -37,30 +42,45 @@ const NavigationBar = () => {
                 )}
               </strong>
             </div>
-
-            {/* <span className="text-warning">A</span>W<span className="text-warning">H</span>S */}
           </Navbar.Brand>
-          <Navbar.Toggle aria-controls="navbarSupportedContent" />
+          <Navbar.Toggle
+            aria-controls="navbarSupportedContent"
+            onClick={() => setExpanded(!expanded)} // Toggle the navbar
+          />
           <Navbar.Collapse id="navbarSupportedContent">
             <Nav className="ms-auto mb-2 mb-lg-0">
-              <Nav.Link as={Link} href="/" className="gradient-text">
+              <Nav.Link
+                as={Link}
+                href="/"
+                className="gradient-text"
+                onClick={handleLinkClick}
+              >
                 Home
               </Nav.Link>
-              <Nav.Link as={Link} href="/company" className="gradient-text">
+              <Nav.Link
+                as={Link}
+                href="/company"
+                className="gradient-text"
+                onClick={handleLinkClick}
+              >
                 Company
               </Nav.Link>
-
-              <Nav.Link as={Link} href="/contact" className="gradient-text">
+              <Nav.Link
+                as={Link}
+                href="/contact"
+                className="gradient-text"
+                onClick={handleLinkClick}
+              >
                 Contact
               </Nav.Link>
-
-              <Nav.Link as={Link} href="/blog" className="gradient-text">
+              <Nav.Link
+                as={Link}
+                href="/blog"
+                className="gradient-text"
+                onClick={handleLinkClick}
+              >
                 Blog
               </Nav.Link>
-
-              {/* <Nav.Link as={Link} to="/login" className="gradient-text">
-              LOGIN
-            </Nav.Link> */}
             </Nav>
           </Navbar.Collapse>
         </Container>
