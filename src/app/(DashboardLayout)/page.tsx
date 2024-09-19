@@ -28,7 +28,7 @@ const Dashboard = () => {
         <CardSlider />
         <SocialMediaBanner />
         <Footer />
-        <Grid container spacing={3}>
+        {/* <Grid container spacing={3}>
           <Grid item xs={12} lg={8}>
             <SalesOverview />
           </Grid>
@@ -52,7 +52,7 @@ const Dashboard = () => {
           <Grid item xs={12}>
             <Blog />
           </Grid>
-        </Grid>
+        </Grid> */}
       </Box>
     </PageContainer>
   );

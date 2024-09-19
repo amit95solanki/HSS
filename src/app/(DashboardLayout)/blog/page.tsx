@@ -1,7 +1,12 @@
 import React from "react";
+import BlogComponent from "../../../app/(DashboardLayout)/components/dashboard/Blog"; // Renamed import
 
-const Blog = () => {
-  return <div>Blog</div>;
+const BlogPage = () => {
+  return (
+    <>
+      <BlogComponent /> {/* Use the imported Blog component */}
+    </>
+  );
 };
 
-export default Blog;
+export default BlogPage; // Renamed export

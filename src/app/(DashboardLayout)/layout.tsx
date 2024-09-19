@@ -4,6 +4,7 @@ import { styled, Container, Box } from "@mui/material";
 import React, { useState } from "react";
 import Header from "@/app/(DashboardLayout)/layout/header/Header";
 import Sidebar from "@/app/(DashboardLayout)/layout/sidebar/Sidebar";
+import NavigationBar from "./components/dashboard/NavigationBar";
 
 // Styled Components
 const MainWrapper = styled("div")({
@@ -15,7 +16,7 @@ const MainWrapper = styled("div")({
 const PageWrapper = styled("div")({
   display: "flex",
   flexGrow: 1,
-  paddingBottom: "60px",
+  // paddingBottom: "60px",
   flexDirection: "column",
   zIndex: 1,
   backgroundColor: "transparent",
@@ -77,11 +78,11 @@ const RootLayout: React.FC<Props> = ({ children }) => {
           {/* Main Wrapper */}
           <PageWrapper className="page-wrapper">
             {/* Header */}
-            <Header
+            {/* <Header
               toggleMobileSidebar={() => setMobileSidebarOpen(true)}
               user={user}
-            />
-
+            /> */}
+            <NavigationBar />
             {/* Page Content */}
 
             {/* Page Route */}
