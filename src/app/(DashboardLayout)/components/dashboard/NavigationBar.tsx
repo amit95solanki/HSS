@@ -24,23 +24,12 @@ const NavigationBar = () => {
   };
 
   return (
-    <div className="mb-6">
+    <div className="mb-8">
       <Navbar bg="light" expand="lg" fixed="top" expanded={expanded}>
         <Container>
           <Navbar.Brand href="/">
             <div className={`${fadeClass} gradient-text`}>
-              <strong>
-                {showFullName ? (
-                  "Hindustaan Survillance "
-                ) : (
-                  <img
-                    src="/images/logos/HSSLOGO.png"
-                    alt="HSS"
-                    height={30}
-                    width={60}
-                  />
-                )}
-              </strong>
+              {showFullName ? "Hindustaan Survillance " : "HSS"}
             </div>
           </Navbar.Brand>
           <Navbar.Toggle

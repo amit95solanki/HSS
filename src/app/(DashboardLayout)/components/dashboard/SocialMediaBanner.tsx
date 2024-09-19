@@ -11,7 +11,7 @@ const SocialMediaBanner = () => {
     <Box sx={styles.banner}>
       <IconButton
         component="a"
-        href="https://wa.me/917007596907"
+        href="https://wa.me/919770519653"
         target="_blank"
         sx={styles.icon}
       >
@@ -43,7 +43,7 @@ const SocialMediaBanner = () => {
       </IconButton>
       <IconButton
         component="a"
-        href="https://www.instagram.com/himalaya.carpets/?igshid=MmIzYWVlNDQ5Yg%3D%3D"
+        href="https://www.instagram.com/"
         target="_blank"
         sx={styles.icon}
       >
