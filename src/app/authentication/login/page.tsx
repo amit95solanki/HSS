@@ -1,14 +1,14 @@
 "use client";
+
 import Link from "next/link";
 import { Grid, Box, Card, Stack, Typography } from "@mui/material";
-// components
 import PageContainer from "@/app/(DashboardLayout)/components/container/PageContainer";
 import Logo from "@/app/(DashboardLayout)/layout/shared/logo/Logo";
 import AuthLogin from "../auth/AuthLogin";
 
 const Login2 = () => {
   return (
-    <PageContainer title="Login" description="this is Login page">
+    <PageContainer title="Login" description="This is the login page">
       <Box
         sx={{
           position: "relative",
@@ -76,10 +76,7 @@ const Login2 = () => {
                       component={Link}
                       href="/authentication/register"
                       fontWeight="500"
-                      sx={{
-                        textDecoration: "none",
-                        color: "primary.main",
-                      }}
+                      sx={{ textDecoration: "none", color: "primary.main" }}
                     >
                       Create an account
                     </Typography>
@@ -93,4 +90,5 @@ const Login2 = () => {
     </PageContainer>
   );
 };
+
 export default Login2;
