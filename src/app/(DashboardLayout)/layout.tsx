@@ -81,10 +81,8 @@ const RootLayout: React.FC<Props> = ({ children }) => {
             user={user}
           />
           <PageWrapper className="page-wrapper">
-            <Header
-              toggleMobileSidebar={() => setMobileSidebarOpen(true)}
-              user={user}
-            />
+            <Header toggleMobileSidebar={() => setMobileSidebarOpen(true)} />
+
             <Container sx={{ paddingTop: "20px", maxWidth: "1200px" }}>
               <Box sx={{ minHeight: "calc(100vh - 170px)" }}>{children}</Box>
             </Container>

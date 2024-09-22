@@ -7,7 +7,7 @@ import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 import apiservice from "../../../service/apiservice";
 import CustomTextField from "@/app/(DashboardLayout)/components/forms/theme-elements/CustomTextField";
-
+import { useRouter } from "next/navigation";
 // Yup validation schema
 const LoginSchema = Yup.object().shape({
   email: Yup.string().email("Invalid email").required("Email is required"),
@@ -21,6 +21,8 @@ interface AuthLoginProps {
 }
 
 const AuthLogin: React.FC<AuthLoginProps> = ({ title, subtitle, subtext }) => {
+  const router = useRouter();
+
   const handleLoginSubmit = async (values: {
     email: string;
     password: string;
@@ -34,11 +36,16 @@ const AuthLogin: React.FC<AuthLoginProps> = ({ title, subtitle, subtext }) => {
         const { accessToken } = response.data;
 
         localStorage.setItem("accessToken", accessToken);
+        router.push("/");
       } else {
         console.log("Login error");
+        localStorage.removeItem("accessToken");
+        window.location.reload();
       }
     } catch (error) {
       console.log("Login error", error);
+      localStorage.removeItem("accessToken");
+      window.location.reload();
     }
   };
 

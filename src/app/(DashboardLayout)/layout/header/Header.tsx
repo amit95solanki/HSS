@@ -18,10 +18,9 @@ import { IconBellRinging, IconMenu } from "@tabler/icons-react";
 
 interface ItemType {
   toggleMobileSidebar: (event: React.MouseEvent<HTMLElement>) => void;
-  user: boolean;
 }
 
-const Header = ({ toggleMobileSidebar, user }: ItemType) => {
+const Header = ({ toggleMobileSidebar }: ItemType) => {
   // const lgUp = useMediaQuery((theme) => theme.breakpoints.up('lg'));
   // const lgDown = useMediaQuery((theme) => theme.breakpoints.down('lg'));
 
@@ -63,23 +62,12 @@ const Header = ({ toggleMobileSidebar, user }: ItemType) => {
           aria-controls="msgs-menu"
           aria-haspopup="true"
         >
-          <img src="/images/logos/HSSLOGO.png" alt="logo" />
           {/* <Badge variant="dot" color="primary">
             <IconBellRinging size="21" stroke="1.5" />
           </Badge> */}
         </IconButton>
         <Box flexGrow={1} />
         <Stack spacing={1} direction="row" alignItems="center">
-          {/* <Button
-            variant="contained"
-            component={Link}
-            href="/authentication/login"
-            disableElevation
-            color="primary"
-          >
-            Login
-          </Button>
-          <Profile /> */}
           <Typography>
             <Link href="/" style={{ textDecoration: "none", color: "inherit" }}>
               Home
@@ -95,12 +83,32 @@ const Header = ({ toggleMobileSidebar, user }: ItemType) => {
           </Typography>
           <Typography>
             <Link
+              href="/company"
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
+              Company
+            </Link>
+          </Typography>
+          <Typography>
+            <Link
               href="/contact"
               style={{ textDecoration: "none", color: "inherit" }}
             >
               Contact
             </Link>
           </Typography>
+          <Button
+            variant="contained"
+            disableElevation
+            color="primary"
+            onClick={() => {
+              localStorage.removeItem("accessToken");
+              window.location.reload();
+            }}
+          >
+            Logout
+          </Button>
+          <Profile />
         </Stack>
       </ToolbarStyled>
     </AppBarStyled>
