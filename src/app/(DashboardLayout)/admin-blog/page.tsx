@@ -1,7 +1,7 @@
 import React from "react";
 import ProductPerformance from "../components/dashboard/ProductPerformance";
 
-const pages = () => {
+const Pages: React.FC = () => {
   return (
     <>
       <ProductPerformance />
@@ -9,4 +9,4 @@ const pages = () => {
   );
 };
 
-export default pages;
+export default Pages;

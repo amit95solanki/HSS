@@ -6,7 +6,7 @@ import Header from "@/app/(DashboardLayout)/layout/header/Header";
 import Sidebar from "@/app/(DashboardLayout)/layout/sidebar/Sidebar";
 import NavigationBar from "./components/dashboard/NavigationBar";
 import apiservice from "../../service/apiservice";
-
+import { useDataContext } from "../../context/AuthContext";
 // Styled Components
 const MainWrapper = styled("div")({
   display: "flex",
@@ -28,7 +28,10 @@ interface Props {
 }
 
 const RootLayout: React.FC<Props> = ({ children }) => {
-  const [user, setUser] = useState<boolean | null>(null); // State to track user
+  const { user, setUser, userInfo, setUserInfo } = useDataContext();
+
+  // console.log("userInfo", userInfo);
+
   const [isSidebarOpen, setSidebarOpen] = useState(true);
   const [isMobileSidebarOpen, setMobileSidebarOpen] = useState(false);
 
@@ -36,7 +39,6 @@ const RootLayout: React.FC<Props> = ({ children }) => {
     const handleGetUserData = async () => {
       try {
         const accessToken = localStorage.getItem("accessToken");
-        console.log("Access Token:", accessToken);
 
         if (!accessToken) {
           console.log("No access token found");
@@ -51,8 +53,8 @@ const RootLayout: React.FC<Props> = ({ children }) => {
         });
 
         const userData = response.data;
+        setUserInfo(userData?.userProfile?.user);
         setUser(userData.success); // Update state with user success status
-        console.log("User Data:", userData);
       } catch (error: any) {
         if (error.response) {
           console.log("Error Data:", error.response.data);
@@ -78,7 +80,7 @@ const RootLayout: React.FC<Props> = ({ children }) => {
             isSidebarOpen={isSidebarOpen}
             isMobileSidebarOpen={isMobileSidebarOpen}
             onSidebarClose={() => setMobileSidebarOpen(false)}
-            user={user}
+            user={Boolean(user)} // Ensure user is a boolean when passed to Sidebar
           />
           <PageWrapper className="page-wrapper">
             <Header toggleMobileSidebar={() => setMobileSidebarOpen(true)} />

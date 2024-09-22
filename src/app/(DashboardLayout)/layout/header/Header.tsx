@@ -97,17 +97,7 @@ const Header = ({ toggleMobileSidebar }: ItemType) => {
               Contact
             </Link>
           </Typography>
-          <Button
-            variant="contained"
-            disableElevation
-            color="primary"
-            onClick={() => {
-              localStorage.removeItem("accessToken");
-              window.location.reload();
-            }}
-          >
-            Logout
-          </Button>
+
           <Profile />
         </Stack>
       </ToolbarStyled>
