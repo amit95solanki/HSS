@@ -60,7 +60,7 @@ const ProductRow = ({ product }: { product: (typeof products)[0] }) => (
     <TableCell>
       <Box sx={{ display: "flex", alignItems: "center" }}>
         <Box>
-          <Link href={`/${product.id}`} passHref>
+          <Link href={`admin-blog/${product.id}`} passHref>
             <Typography variant="subtitle2" fontWeight={600}>
               {product.name}
             </Typography>

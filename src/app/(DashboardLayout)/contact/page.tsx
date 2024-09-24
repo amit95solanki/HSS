@@ -43,8 +43,8 @@ const Contact = () => {
             <div className="section-header text-center pb-5">
               <h2 className="gradient-text mt-5 mb-5">Contact Us</h2>
               <p>
-                🏠 - HIG II, Plot 5-12, JAMUNIPUR COLONY, BHADOHI-221401, U.P.
-                INDIA
+                🏠 - Rangmahal Square, North TT Nagar, TT Nagar, Bhopal, Madhya
+                Pradesh 462003
               </p>
               <p>
                 📧 -

@@ -38,7 +38,7 @@ const AboutSection = () => {
           </Col>
           <Col lg={8} md={12} className="ps-lg-5">
             <div className="">
-              <h6 style={{ textAlign: "justify", fontFamily: "cursive" }}>
+              <h6 style={{ textAlign: "justify" }}>
                 I specialize in the installation of a wide range of security and
                 monitoring solutions, including: <br />
                 <ul>

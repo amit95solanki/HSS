@@ -19,7 +19,7 @@ const SocialMediaBanner = () => {
       </IconButton>
       <IconButton
         component="a"
-        href="https://www.facebook.com/yourprofile"
+        href="https://www.facebook.com/profile.php?id=61558007285880"
         target="_blank"
         sx={styles.icon}
       >
@@ -43,7 +43,7 @@ const SocialMediaBanner = () => {
       </IconButton>
       <IconButton
         component="a"
-        href="https://www.instagram.com/"
+        href="https://www.instagram.com/hindustancctvsupport?igsh=NTc4MTIwNjQ2YQ%3D%3D"
         target="_blank"
         sx={styles.icon}
       >
